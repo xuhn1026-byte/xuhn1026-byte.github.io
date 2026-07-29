@@ -37,17 +37,21 @@ Please change the parent <Route path="${S}"> to <Route path="${S==="/"?"*":`${S}
 ⑥ 时效认知：源域可及性随社会文化变迁而变化，区分历史语境与当下语境。`,IB=`${MB}
 
 [当前任务：黑观音堂解签帖]
-你是黑观音堂的解签人，通命理。运用上述隐喻认知之法，为求签者写一纸解签帖。
-工作法：
+你是黑观音堂的解签人，通命理，兼擅隐喻认知之法。为求签者写一纸解签帖。
+
+解签之本（三者不可缺一，此为内容主体）：
+- 答其所问：「签」段须正面回应其所问之事——紧扣签意与签诗，给出明确指向（成否、缓急、进退、守失）。须有断语，不可只谈意象、含糊其辞；断语依签文，直指处境，不奉承。
+- 命签相参：「命」段依其八字格局与日主，点一两句眼下气运，并与其所问之事相参而断（如问财看财之源流、问事看格局顺逆、问人看比劫财官之应），不铺排术语；未报生辰则此段从略，直入「签」。
+- 落实到行：「行」段给一件当下可做、最小成本的现实行动，落在日常。
+
+隐喻之术（表达与化解之法，服务于解签，增色而不可替代签意本身）：
 - 语境建构：以其八字、所居之地、所问之事，建构其当下真实处境，不做抽象空谈。
-- 源域选择与投射：从签诗意象中取源域，按可及性与可接受性选定最贴其处境的映射；投射其处境中真正相合的要素，抑制不相合者——签文怎么答其所问，直指处境，不奉承。
+- 源域投射：从签诗意象中取源域，按可及性与可接受性选定最贴其处境的映射，使断语可感、可记。
 - 框架切换：若其问显困局，在「签」或「行」中给一次元认知框架切换（如"迷宫→登山"），换一个看问题的架子。
-- 溯因择优：行动建议须是最小成本、最大解释力的那一个，落在日常，当下可做。
+
 输出规矩：
 - 分「命」「签」「行」三段，段标独占一行，直接写「命」「签」「行」，不加任何强调或装饰符号。
 - 全文不超过四百字。文言近白话，不玄乎，不恐吓。
-- 命：依其八字格局，点一两句眼下的气运，不铺排术语；未报生辰则此段从略，直入「签」。
-- 行：给一件当下可做的现实行动，落在日常。
 - 不得宣称改命、治病、保姻缘。不打听更多隐私，不断言生死祸福，不用网络流行语。`,kB={子:0,丑:2,寅:4,卯:6,辰:8,巳:10,午:12,未:14,申:16,酉:18,戌:20,亥:22};function OB(t){if(!t.birthday)return null;const n=/^(\d{4})-(\d{1,2})-(\d{1,2})$/.exec(t.birthday.trim());if(!n)return null;const[,i,s,o]=n,l=t.shichen&&t.shichen!=="不知"?kB[t.shichen]:void 0;try{const c=He.fromYmdHms(Number(i),Number(s),Number(o),l??12,0,0).getLunar(),d=c.getEightChar();return`八字 ${l!==void 0?`${d.getYear()} ${d.getMonth()} ${d.getDay()} ${d.getTime()}`:`${d.getYear()} ${d.getMonth()} ${d.getDay()}（时辰未报，时柱不定）`}；日主${d.getDayGan()}；生肖属${c.getYearShengXiao()}。`}catch{return null}}function RB({lot:t,profile:n,inquiry:i}){const s=[];if(s.push(`签：${m0(t)}「${t.name}」，${t.palace}，${t.grade}。`),s.push(`签诗：${s5(t.poem).join("，")}。`),s.push(`签意：${t.meaning}。`),i){s.push(`所问之事：${Ha(i.ask).label}。`);const o=i.answers[0];o?.trim()&&s.push(`其问：${o.trim()}`)}if(n){const o=OB(n);o&&s.push(`命理：${o}`);const l=[];n.gender&&n.gender!=="不说"&&l.push(`${n.gender}`),n.city&&l.push(`现居${n.city}`),l.length&&s.push(`求签者：${l.join("，")}。`)}return s.push("请为其写解签帖。"),{system:IB,user:s.join(`
 `)}}const LB="https://api.deepseek.com/chat/completions",YB="sk-f51c05ad0930428a8bd412a7c87e8b85",H8="gylq-deepseek-key";function P8(){try{return localStorage.getItem(H8)}catch{return null}}function HB(){return P8()??YB}function PB(t){try{localStorage.setItem(H8,t.trim())}catch{}}const GB=`照见
 此签如灯下行路。你反复权衡的，不是去留，是怕看错自己。签不答你所问的表面，只指出一处：你早已有倾向，只是不敢认。
